@@ -128,7 +128,7 @@ Task 2 is subdivided into two where first we ask to classify the post pair with 
 
 ### File Format
 Annotaded data grouped by course and forums under each course is provided in an encrypted zip file at https://github.com/WING-NUS/NUS-MOOC-Transacts-Corpus/blob/master/data/nus-mooc-transacts-corpus-pswd-protected.zip
-For example, a file annotated threads from 'Lecture' forum of course warhol-001 is named as: warhol-001.lecture.1.csv
+For example, a file annotated with threads from 'Lecture' forum of course: 'warhol-001' is named as: warhol-001.lecture.1.csv
 
 Directory Structure:<br/>
 <pre><code>
@@ -137,7 +137,7 @@ Directory Structure:<br/>
   |__ Task2-Categorisation_Task_top_lvl <br/> 
 </code> </pre>
 
-Each file 'Task1-Marking_Task' consists of following headers:<br/>
+Each file from the folder 'Task1-Marking_Task' consists of the following column headers:<br/>
 <pre><code>
 "HITId", "HITTypeId", "Title", "Description", "Keywords", "Reward", <br/>
 "CreationTime", "MaxAssignments", "RequesterAnnotation", "AssignmentDurationInSeconds", <br/> 
@@ -150,7 +150,7 @@ Each file 'Task1-Marking_Task' consists of following headers:<br/>
 </code> </pre>
 Each Answer.x is either Marked or Unmarked by the annotator
 
-Each file 'Task2-Categorisation_Task_top_lvl' consists of following headers:<br/>
+Each file from the folder 'Task2-Categorisation_Task_top_lvl' consists of the following column headers:<br/>
 <pre><code>
 "HITId", "HITTypeId", "Title", "Description", "Keywords", "Reward", <br/>
 "CreationTime", "MaxAssignments", "RequesterAnnotation", "AssignmentDurationInSeconds", <br/> 
@@ -161,11 +161,13 @@ Each file 'Task2-Categorisation_Task_top_lvl' consists of following headers:<br/
 "Input.threadtype", "Input.threadtitle", "Input.posts", "Input.inst_post", <br/>
 "Answer.1_discourse_type", ..., "Answer.X_discourse_type", "Answer.noreply", "Approve", "Reject"
 </code> </pre>
-Each Answer.x is is a top level discourse category (see table above) for each Marked post from the previous task output
+Each Answer.x is is a top level discourse category (see table above) for each Marked post from the output of the marking task.
 
-File format for Task2-Categorisation_Task_low_lvl is similar except the discourse categories are chosen from low level discourse category (see table above)
+File format for Task2-Categorisation_Task_low_lvl is similar except the discourse categories are chosen from low level discourse category (see table above).
 
-In all three files formats columns: "Input.posts", "Input.inst_post" are in html format. When processing your input we strongly recommend you to drop the columns to easily visualize the data and the annotation. 
+#### Notes on file format:
+
+In all three file formats, columns: "Input.posts", "Input.inst_post" are in html format. When processing the file as input we strongly recommend you to drop/hide the two columns to easily visualize the data and the annotation. 
 
 The following columns are an artefact of the MTurk system and are unlikely to be of use for model development. We recommend you to drop them as well before processing the annotations for model development. The columns are:
 
